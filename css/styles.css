@@ -1,0 +1,220 @@
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fade-in {
+    from {opacity: 0;}
+      to {opacity: 1;}    
+}
+
+html {font-size: 14px;}
+body {margin: 0;padding: 0;background: #0b7cbb;color: #fff;font-family: 'Roboto', sans-serif;}
+.form-group {font-family: 'Roboto', sans-serif;text-align:center;}
+.form-control .btn-default {background: #ebf4fa;text-align:left;}
+
+.heading {
+    padding: 45px 0px 35px;    
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.heading-label {
+    line-height: 14px;
+    padding: 0px 0px 5px;    
+}
+
+.logo {     
+    background-image: url('../img/ESA_logo.PNG');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 140px;
+    height: 140px;
+    animation: fade-in 2s;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+footer {
+    padding: 35px 0px 0px;  
+    background-color: #0b7cbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding-bottom: 40px; */
+    color: #fff;
+}
+
+.help-block {     
+    padding: 3px 1px 0px;      
+    /* margin: 0 auto; */
+    /* background-color: #0b7cbb; */
+    /* display: flex; */        
+    /* justify-content: left; */
+    /* align-items: left; */
+    text-align: left;
+    /* flex-direction: column; */
+    /* padding-bottom: 40px; */
+    color: #fff;
+    /* animation: fade-in 2s; */
+}
+
+.verify-wrap {
+    padding: 25px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#verify{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebf4fa;
+    border-style: none;
+    border-width: 1px;
+    color: #2b2c33;    
+    width: 220px;
+    /* font-size: 16px; */
+    /* line-height: 22px; */
+    /* font-weight: 300; */
+}
+
+#forgotten {
+    padding: 25px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#restore {
+    padding-top: 35px;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+}
+
+.reveal {cursor: pointer; }
+/* .reveal-glyph { color: #0b7cbb; } */
+/*
+@media (max-width: 600px){
+    h1.heading-label{font-size: 25px;line-height: 52px}    
+    .logo-space{width: 129px;}    
+    .logo{max-width: 170px;}    
+}
+/*
+#esa-logo {
+    width: 159px;
+}
+
+.sign-in {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-fields {
+    margin: 0 0 24px;
+    width: 100%;
+}
+
+.sign-in-form {
+    display: grid;
+    grid-template-rows: fit-content;
+    grid-template-rows: max-content;
+    padding: 8px 16px 8px 16px;
+}
+
+.input-area {
+  position: relative;
+}
+
+.login-labels {
+    padding: 0px 0px 5px;
+    color: white;
+    text-align: center;
+    display: block;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 19px;
+    left: 0px;
+    line-height: 14px;
+}
+
+.sign-in-form-inputs {
+    background-color: #3c96c9;
+    border: 1px solid #fff;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: text;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    margin: 0px;
+    padding: 8px 10px 8px 10px;
+    text-align: center;
+    padding: 8px;
+    box-shadow: none;
+}
+
+.warning-icons, .error-message {
+    display: none;
+    color: rgb(151, 18, 18);
+}
+
+.error-message {
+  margin-top: 8px;
+  text-align: left;
+}
+
+.warning-icons {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.sign-in-form-inputs:invalid:not([data-pristine="true"]) {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.sign-in-form-inputs:invalid + .warning-icons {
+    display: inline;
+    color: rgb(151, 18, 18);
+    font-size: 15px;
+}
+
+#username, #password, #verify {
+    width: 500px;
+}
+
+#verify {
+    padding: 16px 24px;
+    background-color: #fff;
+    border-style: none;
+    border-width: 1px;
+    color: #2b2c33;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+}
+
+#federal-laws-logos {
+    margin: 56px auto 24px;
+    text-align: center;
+}
+
+.rights-text {
+    font-size: 12px;
+}
+*/
