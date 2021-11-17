@@ -100,9 +100,6 @@
 					<input id="verify" type="submit" class="btn btn-primary" value="Submit New Password">					
 				</div>				
 
-				<span id="forgotten">				
-				</span>					
-
 			</form>
 			
 		</div><div class="col-xs-3"></div></div>

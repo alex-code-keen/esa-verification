@@ -155,7 +155,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
     </div><div class="col-xs-4"></div></div>
     
     <div class="row"><div class="col-xs-4"></div><div class="col-xs-4">    
-      <div id="forgotten">Forgot password?</div>        
+      <div id="forgotten"><a href="forgot.php">Forgot password?</a></div>        
     </div><div class="col-xs-4"></div></div>    
 
   </div>

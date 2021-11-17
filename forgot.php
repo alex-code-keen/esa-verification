@@ -74,7 +74,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
       } else if ( $activation_code == '0' ) {
 
         // SQL SP execution failed
-        $username_err = "Server error occured. Try again later.";
+        $username_err = "Server error occured. Try again.";
         usleep( 500000 ); // .5 sec to make brute-force harder
 
       } else {                        
