@@ -90,9 +90,13 @@ if(!isset( $_SESSION["uuid"]) || $_SESSION["uuid"] !== true){
 
 <div class="container">
   <h3>Any welcome message header</h3>
-  <p>.. and some other text</p>
+  <p>.. more like excavation site here</p>
   <p><?php echo 'userid -> '.$userid; ?></p>
   <p><?php echo 'uuid -> '.$uuid; ?></p>
+	<br>
+	<a href="index.html">Main ESA Verification (non-secure version)</a><br>
+	<a href="landlordrequest.html">Landlord Request (non-secure version)</a><br>
+	<a href="landlordrequestty.html">Landlord Request Thank You(non-secure version)</a><br>
 </div>
 
 

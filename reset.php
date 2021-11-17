@@ -63,7 +63,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 
 	// start some action
 	if( $err_msg == '' ){
-		// update password for specified uuid and user
+		
 		try{
 
 			// *** *** *** 
@@ -73,7 +73,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 
 			$sql = "SELECT fn_set_contact_password_by_uuid( ?, ? ) as 'res';";
 			$stmt = mysqli_prepare( $link, $sql );
-			mysqli_stmt_bind_param( $stmt, $arr_types, $uuid, $enter_pass ); 
+			mysqli_stmt_bind_param( $stmt, $arr_types, $uuid, $pass_hash ); 
 			mysqli_stmt_execute( $stmt );
 	
 			$res = mysqli_stmt_get_result( $stmt );
