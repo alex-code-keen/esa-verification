@@ -133,101 +133,88 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 		// }
   }
 }
-
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <link rel="shortcut icon" href="./img/favicon.png">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" href="./img/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap">
+      <!-- Styles -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/styles.css">
+      <title>ESA Verification</title>
+  </head>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <body>
+      <!-- BEGIN PAGE CONTENT -->
+      <main class="page-container">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap">  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+        <!-- Begin Logo Section -->
+        <section class="page-header-section">
+          <h1 class="page-heading">ESA Verification</h1>
+          <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
+        </section>
+        <!-- End Logo Section -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Begin Form Section -->
+        <section class="form-wrapper">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" 
+                        enctype="application/x-www-form-urlencoded" 
+                        name="login-form" 
+                        method="post" 
+                        class="needs-validation" 
+                        novalidate>
+            <div class="form-group">
+              <label for="username">Email</label>
+              <input  type="text" 
+                      class="form-control" 
+                      id="username" 
+                      name="username" 
+                      value="<?php echo $username; ?>" 
+                      required>
+              <span class="help-block"><?php echo $username_err; ?></span>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input  type="password" 
+                      class="form-control has-error" 
+                      id="password" 
+                      name="password" 
+                      required>
+              <span class="help-block"><?php echo $password_err; ?></span>
+            </div>    
+            <div class="verify-wrap">
+              <input id="verify" type="submit" class="btn btn-primary btn-large" value="Submit To Verify">
+            </div>
+          </form>
+          <!-- Forgot Password -->
+          <div id="forgotten"><a class="link-primary" href="forgot.php">Forgot password?</a></div>      
+        </section>
+        <!-- End Form Section -->
+        
+      </main>
+      <!-- END PAGE CONTENT -->
 
-  <script type="text/javascript" src="./js/login.js"></script>
+      <!-- BEGIN FOOTER -->
+      <footer>
+          <span class="rights-text">© 2021 ESA Verification</span>
+      </footer>
+      <!-- END FOOTER -->
 
-  <title>ESA Verification</title>
-</head>
-
-<body>
-  
-  <div class="container">
-    <div class="row"><div class="col-xs-1"></div><div class="col-xs-10">
-
-      <div class="heading">
-        <p class="heading-label">ESA Verification</p>
-        <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
-      </div>
-
-    </div><div class="col-xs-1"></div></div>    
-
-    <div class="row"><div class="col-xs-3"></div><div class="col-xs-6">
-      
-        <form 
-          action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" 
-          enctype="application/x-www-form-urlencoded" 
-          name="login-form" 
-          method="post" 
-          class="needs-validation" 
-          novalidate>
-          
-          <div class="form-group">
-            <label for="username">Email:</label>
-            <input 
-              type="text" 
-              class="form-control" 
-              id="username" 
-              placeholder="Enter email" 
-              name="username" 
-              value="<?php echo $username; ?>" 
-              required>
-            <span class="help-block"><?php echo $username_err; ?></span>
-          </div>
-    
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input 
-              type="password" 
-              class="form-control has-error" 
-              id="password" 
-              placeholder="Enter password" 
-              name="password" 
-              required>
-            <span class="help-block"><?php echo $password_err; ?></span>
-          </div>    
-    
-          <div class="verify-wrap">
-            <input id="verify" type="submit" class="btn btn-primary" value="Submit To Verify">
-          </div>
-        </form>
-      
-
-    </div><div class="col-xs-3"></div></div>
-    
-    <div class="row"><div class="col-xs-3"></div><div class="col-xs-6">    
-      <div id="forgotten"><a href="forgot.php">Forgot password?</a></div>        
-    </div><div class="col-xs-3"></div></div>    
-
-  </div>
-  <footer>
-    <!-- div>
-      <img id="federal-laws-logos" class="logos" src="./img/Federal_Laws_logos.PNG" alr="Federal Laws logos" />
-    </div -->
-    <span class="rights-text">© 2021 ESA Verification</span>
-  </footer>
-
-</body>
+      <!-- BEGIN SCRIPTS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- Page Specific Scripts -->
+      <script type="text/javascript" src="./js/login.js"></script>
+      <!-- END SCRIPTS -->
+  </body>
 
 </html>
