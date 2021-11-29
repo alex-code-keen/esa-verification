@@ -1,0 +1,102 @@
+/*ver=0.1*/
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}
+* {box-sizing: border-box;}
+html {font-size: 14px;}
+body {margin: 0;padding: 0;background: #fff;font-family: 'Roboto Condensed', sans-serif;}
+.title{margin: 0;}
+.img-fluid {display: block;width: 100%;}
+a {text-decoration: none;}
+ul {list-style: none;margin: 0;padding: 0;}
+.button-1{background-color: #0288d1;padding: 15px 20px;font-family: 'Roboto', sans-serif;font-size: 16px;line-height: 16px;font-weight: 700;text-decoration: inherit;border: 0;color: #fff;width: 100%;}
+.m-end-0{margin-block-end: 0!important;}
+.m-b-20{margin-bottom: 20px;}
+.container {max-width: 786px;margin: 0 auto;}
+.container-fluid {margin: 0 auto;padding-left: 30px;padding-right: 30px;}
+.approval-section{width: 100%;background-color: #217db7;}
+.approval-section h1.title{color: #fff;font-size: 41px;margin: 5px 0;display: inline-block;width: 100%;text-align: center;line-height: 58px;font-weight: 700;}
+.approval-section .logo-space{width: 103px;display: block;margin: auto;}
+.letter-space{background-color: #fff;padding: 30px 80px;margin-top: 20px;}
+.letter-space p{line-height: 25px;font-weight: 300;color: #2b2c33;font-size: 17px;font-family: 'Open Sans', sans-serif;    margin-block-start: 2em;margin-block-end: 2em;}
+.letter-space b{font-weight: 700;color: #28282b;}
+.letter-space b.underline{text-decoration: underline;}
+.letter-space a{font-family: 'Open Sans', sans-serif;font-weight: 700;color: #3d50ff;font-size: 17px;text-decoration: underline;}
+.approval-section .footer-space{display: flex;justify-content: center;width: 100%;}
+.landlordrequest .inner-container, .landlordrequestty .inner-container{max-width: 629px;margin: auto;padding: 30px 47px 40px;background-color: #fbfbfb;display: flex;align-items: center;flex-direction: column;}
+.landlordrequest img.logo, .landlordrequestty img.logo{max-width: 262px;}
+.landlordrequest .center-img {max-width: 76%;}
+.landlordrequest .sub-title { font-size: 20px;line-height: 20px;color: #2b2c33;text-align: center;}
+.landlordrequest h1.title{font-weight: 700;font-family: Roboto, sans-serif;font-size: 32px;color: #004260;margin: 20px 0;text-align: center;}
+.landlordrequestty h1.title{font-size: 42px;line-height: 42px;color: #2b2c33;font-family: 'Roboto', sans-serif;text-align: center; margin: 20px 0;}
+.landlordrequestty .inner-container{margin: 80px auto;}
+.landlordrequestty .sub-title{text-align: center;font-size: 30px;line-height: 30px;font-weight: 300;color: #2b2c33;font-family: 'Roboto', sans-serif;}
+.landlordrequestty .message{font-size: 20px;line-height: 20px;color: #2b2c33;text-align: center;margin-bottom: 0;}
+.checkcontainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 10px 0 30px;
+  cursor: pointer;
+  font-size: 21px;
+    line-height: 25px;
+    font-weight: 700;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+  width: 100%;
+}
+.checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+.checkcontainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.checkcontainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkcontainer .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media (max-width: 600px){
+  .approval-section h1.title{font-size: 25px;line-height: 52px}
+  .letter-space{padding: 20px;}
+  .approval-section .logo-space{width: 129px;}
+  .landlordrequestty .inner-container{margin: 0 auto;}
+  .landlordrequestty h1.title, .landlordrequestty .sub-title, .landlordrequestty .message{font-size: 24px;}
+  .landlordrequest img.logo, .landlordrequestty img.logo {max-width: 170px;}
+  .landlordrequest .inner-container, .landlordrequestty .inner-container{padding: 20px;}
+}
+img{ max-width: 100%; }
