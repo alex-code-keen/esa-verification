@@ -98,7 +98,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         } else{   
 
           usleep( 500000 ); // wait for .5 sec to make brute-force harder          
-          $password_err = $err_msg=  "The password you entered was not valid. 5 ";
+          $password_err = $err_msg=  "The password you entered was not valid. 5";
 
         }
       } else {
@@ -146,6 +146,8 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap">
+      <!-- Icons -->
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />  
       <!-- Styles -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -166,11 +168,12 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         <!-- Begin Form Section -->
         <section class="form-wrapper">
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" 
-                        enctype="application/x-www-form-urlencoded" 
-                        name="login-form" 
-                        method="post" 
-                        class="needs-validation" 
-                        novalidate>
+                enctype="application/x-www-form-urlencoded" 
+                name="login-form" 
+                method="post" 
+                class="needs-validation" 
+                novalidate>
+
             <div class="form-group">
               <label for="username">Email</label>
               <input  type="text" 
@@ -178,21 +181,29 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
                       id="username" 
                       name="username" 
                       value="<?php echo $username; ?>" 
-                      required>
+                      required>                      
               <span class="help-block"><?php echo $username_err; ?></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group form-input-group">
               <label for="password">Password</label>
-              <input  type="password" 
+              <div class="input-group">
+                <input type="password" 
                       class="form-control has-error" 
                       id="password" 
                       name="password" 
-                      required>
-              <span class="help-block"><?php echo $password_err; ?></span>
+                      required />
+                <span id="reveal" class="input-group-addon reveal">
+                  <i class="bi bi-eye-slash" id="togglePassword"></i>					
+                </span>
+              </div>
+              <span class="help-block"><?php echo $password_err; ?></span>              
             </div>    
+
             <div class="verify-wrap">
               <input id="verify" type="submit" class="btn btn-primary btn-large" value="Submit To Verify">
             </div>
+            
           </form>
           <!-- Forgot Password -->
           <div id="forgotten"><a class="link-primary" href="forgot.php">Forgot password?</a></div>      

@@ -46,7 +46,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
     try {
       // Prepare a select statement
       // !!!!!!!!!!!!!
-      $username = 'alex.code.keen@gmail.com';
+      // $username = 'alex.code.keen@gmail.com';
       // !!!!!!!!!!!!!
       $arr_types = "s";
       $sql = "SELECT fn_insert_pass_activation_code_by_email( ? ) as 'res';";
@@ -166,22 +166,25 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
           <!-- End Logo Section -->
           <!-- Begin Form Section -->
           <section class="form-wrapper">
+
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" 
-                          enctype="application/x-www-form-urlencoded" 
-                          name="login-form" 
-                          method="post" 
-                          class="needs-validation" 
-                          id="restore"
-                          novalidate>
-                <div class="form-group">
-                    <label for="username">Email to restore password</label>
-                    <input  type="text" 
-                            class="form-control" id="username" 
-                            name="username" 
-                            value="<?php echo $username; ?>" 
-                            required>
-                    <span class="help-block"><?php echo $username_err; ?></span>
-                </div>       
+                  enctype="application/x-www-form-urlencoded" 
+                  name="login-form" 
+                  method="post" 
+                  class="needs-validation" 
+                  id="restore"
+                  novalidate>
+
+              <div class="form-group">
+                <label for="username">Email to restore password</label>
+                <input type="text" 
+                       class="form-control" id="username" 
+                       name="username" 
+                       value="<?php echo $username; ?>" 
+                       required>
+                <span class="help-block"><?php echo $username_err; ?></span>
+              </div>       
+
               <div class="verify-wrap">
                   <input id="verify" type="submit" class="btn btn-primary btn-large" value="Submit">
               </div>
