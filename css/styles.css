@@ -77,7 +77,9 @@ footer {
     text-align: left;
     color: #fff;
 }
-
+.help-block-error{
+    color: var(--color-light-red);
+}
 .verify-wrap {
     padding: 25px 0px 10px;
     display: flex;
