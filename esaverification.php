@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Focaloid">
-    <meta name="keywords" content="Focaloid">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="./img/favicon.png">
+	<title>ESA Verification</title>
+	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./css/style.css?ver=0.1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap">
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-	<section class="approval-section">
+	<!-- BEGIN NAVBAR -->
+	<header>
+		<nav class="navbar navbar-fixed-top dashboard-navbar">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<div class="navbar-logo-wrapper">
+						<img src="./img/ESA_logo.PNG" class="navbar-logo" alt="ESA"/> 
+					</div>
+					Your ESA partner
+				</a>
+			</div> 
+			<div class="navbar-menu-mobile"></div>       
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <li class="active"><a href="">Home</a></li>
+				<li class=""><a href="">Messages</a></li> -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="">
+					<span class="glyphicon glyphicon-user"></span>  Profile <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="reset-password.php">Reset Password</a></li>
+					</ul>
+				</li>
+				<li class=""><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>  SignOut</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- END NAVBAR -->
+	<!-- BEGIN DASHBOARD SECTION -->
+	<section class="dashboard-section">
 		<div class="container">
-			<h1 class="title">ESA Verification Portal</h1>
-			<div class="logo-space">
-				<img class="img-fluid logo" src="img/logo.png" alt="logo">
-			</div>
-			<div class="letter-space">
+			<div class="letter-space message-wrapper">
 				<p><b>Dear ,</b></p>
 				<p>Congratulations on your ESA approval.</p>
 				<p>Use the link below to access your ESA documentation along with a personal note from the approving health professional. <b>Be sure to read the additional information</b> listed on this page to better understand how federal laws protect your rights with an Emotional Support Animal.</p>
 				<p>We've also given you access to receive custom ESA forms for landlord requests. when you need them follow the instructions below to submit those requests.</p>
-				<a href="">Click Here to view and print your ESA Documents</a>
+				<p><a href="">Click Here to view and print your ESA Documents</a></p>
 				<p>Your ESA Verification number is:</p>
 				<p>We think it is important for our customers to be armed with the facts on how ESA laws work, so you know that you're fully protected under all federal housing laws.</p>
 				<p>If any landlord attempt to give you push back, be sure to let them know you understand your rights and are fully covered to have your Emotional Support Animal(s) with you.</p>
@@ -44,12 +69,19 @@
 				<p>Lastly, as you know ESA approval is based on your current emotional needs which may change over time.</p>
 				<p>We all go through rough periods in our life where we have more stress and anxiety than usual. ESA requests can only be provided for a maximum of up to one year.</p>
 				<p>Your ESA documents are valid for the maximum time - Before the year is up we'll contact you to renew your ESA at a discounted rate as a valued customer.</p>
-				<p class="m-end-0">Have any questions? email our support team for<br> assistance: <a href="mailid:support@Supportpets.com" target="">support@Supportpets.com</a></p>
+				<p class="m-end-0">Have any questions? email our support team for<br> assistance: <a href="mailto:support@Supportpets.com" target="">support@Supportpets.com</a></p>
 			</div>
 			<div class="footer-space">
 				<img src="images/footer.png" alt="footer">
 			</div>
 		</div>
 	</section>
+	<!-- END DASHBOARD SECTION -->
+	<!-- BEGIN SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/script.js"></script>
+	<!-- END SCRIPTS -->
 </body>
 </html>

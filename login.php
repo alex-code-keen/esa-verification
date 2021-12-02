@@ -182,7 +182,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
                       name="username" 
                       value="<?php echo $username; ?>" 
                       required>                      
-              <span class="help-block"><?php echo $username_err; ?></span>
+              <span class="help-block help-block-error"><?php echo $username_err; ?></span>
             </div>
 
             <div class="form-group form-input-group">
@@ -197,7 +197,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
                   <i class="bi bi-eye-slash" id="togglePassword"></i>					
                 </span>
               </div>
-              <span class="help-block"><?php echo $password_err; ?></span>              
+              <span class="help-block help-block-error"><?php echo $password_err; ?></span>              
             </div>    
 
             <div class="verify-wrap">
