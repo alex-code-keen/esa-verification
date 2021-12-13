@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
-  header( "location: welcome.php" );
+  header( "location: esaverification.php" );
   exit;
 }
 
@@ -93,7 +93,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
           // $_SESSION["username"] = $username;                            
           
           // Redirect user to welcome page
-          header("location: welcome.php");
+          header("location: esaverification.php");
 
         } else{   
 
@@ -182,7 +182,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
                       name="username" 
                       value="<?php echo $username; ?>" 
                       required>                      
-              <span class="help-block help-block-error"><?php echo $username_err; ?></span>
+              <span class="help-block"><?php echo $username_err; ?></span>
             </div>
 
             <div class="form-group form-input-group">
@@ -197,7 +197,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
                   <i class="bi bi-eye-slash" id="togglePassword"></i>					
                 </span>
               </div>
-              <span class="help-block help-block-error"><?php echo $password_err; ?></span>              
+              <span class="help-block"><?php echo $password_err; ?></span>              
             </div>    
 
             <div class="verify-wrap">
