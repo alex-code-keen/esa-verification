@@ -28,6 +28,7 @@
         <!-- End Logo Section -->
 		<!-- Begin Password Criteria -->
 		<section class="content-center">
+			<h2 class="section-heading-small">Create a Password to Access your ESA Documents</h2>
 			<div class="snippet">
 				<label class="snippet-heading">PASSWORD MUST BE</label>
 				<div class="snippet-body">
