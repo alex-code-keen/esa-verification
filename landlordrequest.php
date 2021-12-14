@@ -25,6 +25,8 @@ if( !isset( $_SESSION["userid"] )){
 } else {
 	$userid = $_SESSION["userid"];
 }
+
+
 /*
 try{
 	// *** *** *** 
@@ -69,34 +71,33 @@ try{
 } // try
 */
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Focaloid">
-	<meta name="keywords" content="Focaloid">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="./img/favicon.png">
 	<title>ESA LandLord Request</title>
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap">
 	<!-- Styles -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./css/style.css?ver=0.1">
-	<!-- link rel="stylesheet" type="text/css" href="./css/styles.css" -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
 	<!-- BEGIN NAVBAR -->
-	<!-- header>
+	<header>
 		<nav class="navbar navbar-fixed-top dashboard-navbar">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">
 					<div class="navbar-logo-wrapper">
 						<img src="./img/ESA_logo.PNG" class="navbar-logo" alt="ESA"/> 
 					</div>
-					ESA Access
+					Your ESA partner
 				</a>
 			</div> 
 			<div class="navbar-menu-mobile"></div>       
@@ -111,26 +112,30 @@ try{
 				<li class=""><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>  SignOut</a></li>
 			</ul>
 		</nav>
-	</header -->
+	</header>
 	<!-- END NAVBAR -->
 	<!-- BEGIN DASHBOARD SECTION -->
-	<section class="landlordrequest">
-		<div class="inner-container">
-			<img class="logo" src="images/support-pets.jpg" alt="support-pets">
-			<h1 class="title">Submit Custom ESA Housing Request</h1>
-			<img class="center-img" src="images/home.jpg" alt="home">
-			<p class="sub-title">To get started with your custom landlord and management company ESA request check the box below.</p>
-			<label class="checkcontainer">Check to Start Your Request
-				<input type="checkbox">
-				<span class="checkmark"></span>
-			</label>
-			<button class="button-1 m-b-20">Submit and continue to next step</button>
-			<button class="button-1">I don't need it. Take me back</button>
+	<section class="dashboard-section">
+		<div class="container content-center">
+            <img class="dashboard-inner-logo" src="img/support-pets.jpg" alt="support-pets">
+            <h1 class="page-heading">Submit Custom ESA Housing Request</h1>
+            <img class="dashboard-img" src="img/home.jpg" alt="home">
+            <div class="max-width-small">
+                <p class="body-copy">To get started with your custom landlord and management company ESA request check the box below.</p>
+                <div class="checkbox-item">
+                    <input class="checkbox-input" type="checkbox" id="start-request">
+                    <label class="checkbox-label checkbox-label-bold" for="start-request">Check to Start Your Request</label>
+                </div>
+                <div class="button-group full-width">
+                    <button class="btn btn-primary full-width">Submit and continue to next step</button>
+                    <button class="btn btn-neutral full-width">I don't need it. Take me back</button>
+                </div>
+            </div>
 		</div>
 	</section>
 	<!-- END DASHBOARD SECTION -->
 	<!-- BEGIN FOOTER -->
-	<!-- footer class="dashboard-footer">
+	<footer class="dashboard-footer">
 		<p class="m-b-15">In Accordance with Federal Laws</p>
 		<img class="footer-logo m-b-15" src="./img/dashboard-footer-logo.JPG" alt="logo">
 		<p class="m-b-15">&copy; 2021 ESA Verification</p>
@@ -139,13 +144,13 @@ try{
 			<li><a href="#">Privacy</a></li>
 			<li><a href="#">Doctors</a></li>
 		</ul>
-	</footer -->
+	</footer>
 	<!-- END FOOTER -->
 	<!-- BEGIN SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="./js/navbar.js"></script>
-	<!-- END SCRIPTS -->		
+	<!-- END SCRIPTS -->
 </body>
 </html>

@@ -39,9 +39,9 @@ session_start();
         <!-- End Logo Section -->
         <!-- Begin Reset Message -->
         <section class="content-center">
-          <h2 class="section-heading-small">Your password restore request was sent.</h4>
-          <p class="body-copy">Please, check your email for further instructions. It may take up to a few minutes to show up.</p>
-          <div class="snippet snippet-hint m-t-30">
+            <h2 class="section-heading-small">Your password restore request was sent.</h4>
+            <p class="body-copy">Please, check your email for further instructions. It may take up to a few minutes to show up.</p>
+            <div class="snippet snippet-hint m-t-30">
               <div class="snippet-body">
                 <p><span class="text-bold p-r-5">Tip:</span>If you can't see email in Incoming folder - try to Refresh your email or search in Spam folder before requesting again.</p>
               </div>
