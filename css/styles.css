@@ -2,7 +2,8 @@
     --primary-color: #0b7cbb;
     --primary-color-light: rgb(60, 150, 201);
     --color-light-blue:#edf6fa;
-    --color-dark-grey: #34515e;
+    --color-darker-grey: #1d272b;
+    --color-dark-grey: #527787;
     --color-light-grey: #8eacbb;
     --color-dark-red: #d50000;
     --color-light-red: #ff5131;
@@ -56,7 +57,17 @@ body {
     height: 140px;
     animation: fade-in 2s;
 }
-
+.dashboard-inner-logo{
+    max-width: 400px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.dashboard-img{
+    margin:20px 0;
+    object-fit: scale-down;
+    width: 100%;
+    max-height: 500px;
+}
 footer {
     padding: 15px 0;
     background-color: #0b7cbb;
@@ -160,6 +171,7 @@ footer {
 .body-copy {
     font-size: 16px;
     font-weight: normal;
+    margin-bottom: 30px;
 }
 
 .page-header-section {
@@ -175,6 +187,8 @@ footer {
 .btn {
     border-radius: 0;
     transition: all .3s ease-in-out;
+    min-height: 50px;
+    font-size: 16px;
 }
 
 .btn:hover,
@@ -197,12 +211,33 @@ footer {
     font-size: 15px;
     font-weight: 300;
 }
+.btn-neutral{
+    background-color: var(--color-dark-grey);
+    color: white;
+}
+.btn-neutral:hover{
+    background-color: var(--color-darker-grey);
+    color: white;
+}
+.button-group{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+}
+.button-group .btn:not(:last-of-type){
+    margin-bottom: 15px!important;
+}
 
+.full-width{
+    width: 100%!important;
+    max-width: unset;
+}
 .link-primary {
     color: #fff;
     text-decoration: underline;
 }
-
+/** Form Elements **/
 .form-control::placeholder {
     color: var(--color-dark-grey);
     opacity: 1;
@@ -221,7 +256,69 @@ footer {
 .form-input-group {
     margin-top: 20px;
 }
+/** CheckBox **/
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 25px;
+    min-height: 25px;
+}
 
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    transition: all .3s ease-in-out;
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.max-width-small{
+    max-width: 500px!important;
+}
 .content-center {
     display: flex;
     flex-direction: column;
@@ -230,7 +327,6 @@ footer {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .snippet {
     display: flex;
     align-items: center;
@@ -241,13 +337,18 @@ footer {
     font-size: 14px;
     max-width: 600px;
 }
-
 .snippet.snippet-hint {
     background: url("../img/bulb.svg") no-repeat 10px 10px;
     padding-left: 40px;
     background-size: 20px;
 }
-
+.snippet-neutral.snippet-hint{
+    background: url(../img/bulb_blue.svg) #eaf5ff no-repeat 10px 10px;
+    background-size: 20px;
+}
+.snippet-neutral{
+    border-color: var(--primary-color);
+}
 .snippet-error {
     border-color: var(--color-light-red);
 }
@@ -290,8 +391,7 @@ footer {
     background: #fff;
     color: #000;
     font-size: 16px;
-    padding-top:100px;
-    padding-bottom: 50px;
+    padding:100px 0;
     min-height: 100vh;
 }
 .message-wrapper{
