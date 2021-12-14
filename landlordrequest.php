@@ -1,30 +1,6 @@
 <?php
 // Initialize the session
-session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-//   header("location: login.php");
-//   exit;	
-// }
-
-require( dirname(__FILE__).'/../config/config.php' ); // <- $link
-
-#------------------------------------------
-function clearStoredResults($mysqli_link){
-#------------------------------------------
-	while($mysqli_link->next_result()){
-		if($l_result = $mysqli_link->store_result()){
-			$l_result->free();
-		}
-	}
-}
-
-if( !isset( $_SESSION["userid"] )){
-	$userid = "2240";	
-} else {
-	$userid = $_SESSION["userid"];
-}
 
 
 /*
@@ -122,9 +98,11 @@ try{
             <img class="dashboard-img" src="img/home.jpg" alt="home">
             <div class="max-width-small">
                 <p class="body-copy">To get started with your custom landlord and management company ESA request check the box below.</p>
-                <div class="checkbox-item">
-                    <input class="checkbox-input" type="checkbox" id="start-request">
-                    <label class="checkbox-label checkbox-label-bold" for="start-request">Check to Start Your Request</label>
+                <div class="checkbox-wrapper">
+                    <label class="checkbox-container">Check to Start Your Request
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
                 <div class="button-group full-width">
                     <button class="btn btn-primary full-width">Submit and continue to next step</button>
