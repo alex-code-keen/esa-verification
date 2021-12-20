@@ -162,6 +162,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         <section class="page-header-section">
           <h1 class="page-heading">ESA Verification</h1>
           <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
+          <h2 class="section-heading-small">First time here, please enter the email used to receive your ESA documents. Don’t know your password please click password reset below.</h2>
         </section>
         <!-- End Logo Section -->
 

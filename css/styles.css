@@ -100,10 +100,6 @@ footer {
     justify-content: center;
 }
 
-#restore {
-    padding-top: 35px;
-}
-
 .reveal {
     cursor: pointer;
 }
@@ -133,7 +129,9 @@ footer {
     min-height: 90vh;
     padding: 0px 25px;
 }
-
+.bg-white .page-container{
+    color:#000;
+}
 .form-wrapper {
     max-width: 400px;
     width: 100%;
@@ -157,15 +155,22 @@ footer {
     font-family: var(--font-condensed);
     font-weight: bold;
 }
-
+.page-heading-large{
+    font-size: 60px;
+    font-weight: bold;
+}
+.text-normal{
+    font-weight: normal;
+}
 .page-heading {
     font-size: 30px;
     margin: 0 0 10px 0;
 }
 
 .section-heading-small {
-    font-size: 24px;
-    margin: 0 0 20px 0;
+    font-size: 22px;
+    margin: 20px 0 0 0;
+    line-height: 30px;
 }
 
 .body-copy {
@@ -175,8 +180,10 @@ footer {
 }
 
 .page-header-section {
-    padding: 40px 0px 25px 0px;
+    padding: 40px 0px 30px 0px;
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .page-header-section .logo {
@@ -232,6 +239,9 @@ footer {
 .full-width{
     width: 100%!important;
     max-width: unset;
+}
+.not-found-wrapper{
+    height: 92vh;
 }
 .link-primary {
     color: #fff;
@@ -477,4 +487,9 @@ footer {
 }
 .footer-logo{
     width: 50px;
+}
+.not-found-image{
+    margin-top: 15px;
+    width:300px;
+    height: auto;
 }
