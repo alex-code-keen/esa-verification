@@ -150,8 +150,7 @@ footer {
     color: #fff;
 }
 
-.page-heading,
-.section-heading-small {
+.page-heading {
     font-family: var(--font-condensed);
     font-weight: bold;
 }
@@ -168,9 +167,11 @@ footer {
 }
 
 .section-heading-small {
-    font-size: 22px;
+    font-size: 16px;
     margin: 20px 0 0 0;
-    line-height: 30px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .body-copy {
