@@ -130,7 +130,7 @@ try{
 				</p>
 
 				<?php if ( empty($esa_docs) || (float)$esa_docs == 0) {  ?>
-					<p><b>There are missing any apporved or unexpired ESA Documents for your account.</b></p>
+					<p><b>Your ESA documents .</b></p>
 				<?php } else { ?>
 					<p><a href="https://drive.google.com/open?id=<?php echo $esa_docs; ?>">
 						Click Here to view and print your ESA Documents
