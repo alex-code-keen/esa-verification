@@ -69,9 +69,9 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
       // userid = 0 - no contact_id for email
       // userid = 1 - password is null
       // userid = XXX - there is  auser and a password
-      if ( empty( $userid )){ $err_msg = "Server error occured. Try again later. 1"; }
-      if ( $userid == 0 ){ $err_msg = $username_err = "The email you entered was not valid. 2"; }
-			if ( $userid == 1 ){ $err_msg = "Password was not set. Try resetting it. 3";  }
+      if ( empty( $userid )){ $err_msg = "Server error occured. Try again later."; }
+      if ( $userid == 0 ){ $err_msg = $username_err = "Enter the email you signed up with."; }
+			if ( $userid == 1 ){ $err_msg = "Password was not set. Try resetting it.";  }
 		
       // Free stored results
       clearStoredResults( $link );
