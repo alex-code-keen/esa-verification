@@ -1,51 +1,19 @@
 <?php
 // Initialize the session
+session_start();
 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+   exit;	
+}
 
+header('Expires: Tue, 01 Jan 2000 00:00:00 GMT');
+header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache'); 
 
-/*
-try{
-	// *** *** *** 
-	// let's find out contact data
-	
-	$arr_types = "i";	
-	$sql = "SELECT fn_get_json_contact_esa_doc_by_id( ? ) as 'res';";
-	$stmt = mysqli_prepare( $link, $sql );
-	mysqli_stmt_bind_param( $stmt, $arr_types, $userid ); 
-	mysqli_stmt_execute( $stmt );
-
-	$res = mysqli_stmt_get_result( $stmt );
-	$row = mysqli_fetch_assoc( $res );
-	// print_r($row);		
-
-	$jsonObj = json_decode( $row['res'] );
-	$esa_docs = $jsonObj->esa_docs;
-	// {"op_id": 2240, "gender": 1, "esa_docs": null, "lastname": "Falcone", "firstname": "Alex", "parent_id": null, "is_over_18": 1, "email_prime": "alex.code.keen@gmail.com"}
-	// echo $jsonObj;
-	
-	// Free stored results
-	clearStoredResults( $link );
-	$res->free();
-	$res->close();
-	$link->next_result();
-	// *** *** *** 
-
-} catch( Exception $e ) {
-
-	// $username_err = "Server error occured. Try again later.";
-	mysqli_stmt_close( $stmt );
-	mysqli_close( $link );
-	// 
-	// header( "location: err_page.php" );
-	exit;
-	
-} finally {
-
-	mysqli_stmt_close( $stmt );
-	mysqli_close( $link );		
-
-} // try
-*/
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +50,7 @@ try{
 					<a class="dropdown-toggle" data-toggle="dropdown" href="">
 					<span class="glyphicon glyphicon-user"></span>  Profile <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="reset-password.php">Reset Password</a></li>
+						<li><a href="reset_password.php">Reset Password</a></li>
 					</ul>
 				</li>
 				<li class=""><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>  SignOut</a></li>
@@ -106,7 +74,7 @@ try{
                 </div>
                 <div class="button-group full-width">
                     <button class="btn btn-primary full-width">Submit and continue to next step</button>
-                    <button class="btn btn-neutral full-width">I don't need it. Take me back</button>
+                    <button class="btn btn-neutral full-width" onclick="window.history.back()">I don't need it. Take me back</button>
                 </div>
             </div>
 		</div>
@@ -116,7 +84,7 @@ try{
 	<footer class="dashboard-footer">
 		<p class="m-b-15">In Accordance with Federal Laws</p>
 		<img class="footer-logo m-b-15" src="./img/dashboard-footer-logo.JPG" alt="logo">
-		<p class="m-b-15">&copy; 2021 ESA Verification</p>
+		<p class="m-b-15">&copy; 2022 ESA Verification</p>
 		<ul class="list-inline footer-list">
 			<li><a href="#">Terms</a></li>
 			<li><a href="#">Privacy</a></li>

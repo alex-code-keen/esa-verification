@@ -24,7 +24,7 @@
         <section class="page-header-section">
             <h1 class="page-heading">ESA Verification</h1>
             <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
-			<h2 class="section-heading-small">Create a Password to Access your ESA Documents</h2>
+						<h2 class="section-heading-small">Create a Password to Access your ESA Documents</h2>						
         </section>
         <!-- End Logo Section -->
 		<!-- Begin Password Criteria -->
@@ -90,7 +90,7 @@
     <!-- END PAGE CONTENT -->
     <!-- BEGIN FOOTER -->
     <footer>
-        <span class="rights-text">© 2021 ESA Verification</span>
+        <span class="rights-text">© 2022 ESA Verification</span>
     </footer>
     <!-- END FOOTER -->
     <!-- BEGIN SCRIPTS -->

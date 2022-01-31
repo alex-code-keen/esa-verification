@@ -4,7 +4,8 @@
 session_start();
 
 // make include here
-require( dirname(__FILE__).'/../config/config.php' ); //  <- $link
+// require( dirname(__FILE__).'/../config/config.php' ); //  <- dev $link
+require( dirname(__FILE__).'/config/config_sql.php' ); // <- prod $link
 
 #------------------------------------------
 function clearStoredResults($mysqli_link){
@@ -120,7 +121,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 			$_SESSION[ "loggedin" ] = true;
 			$_SESSION[ "userid" ] 	= $userid;
 			// 
-			header( "location: welcome.php" );
+			header( "location: esaverification.php" );
 			exit;
 		}
 

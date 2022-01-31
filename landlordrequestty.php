@@ -32,7 +32,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="">
 					<span class="glyphicon glyphicon-user"></span>  Profile <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="reset-password.php">Reset Password</a></li>
+						<li><a href="reset_password.php">Reset Password</a></li>
 					</ul>
 				</li>
 				<li class=""><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>  SignOut</a></li>
@@ -59,7 +59,7 @@
 	<footer class="dashboard-footer">
 		<p class="m-b-15">In Accordance with Federal Laws</p>
 		<img class="footer-logo m-b-15" src="./img/dashboard-footer-logo.JPG" alt="logo">
-		<p class="m-b-15">&copy; 2021 ESA Verification</p>
+		<p class="m-b-15">&copy; 2022 ESA Verification</p>
 		<ul class="list-inline footer-list">
 			<li><a href="#">Terms</a></li>
 			<li><a href="#">Privacy</a></li>

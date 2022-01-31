@@ -3,10 +3,10 @@
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-// if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
-//     header( "location: dashboard.php" );
-//     exit;
-// }
+if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
+    header( "location: dashboard.php" );
+    exit;
+}
 
 ?>
 
@@ -52,7 +52,7 @@ session_start();
     <!-- END PAGE CONTENT -->
     <!-- BEGIN FOOTER -->
     <footer>
-        <span class="rights-text">© 2021 ESA Verification</span>
+        <span class="rights-text">© 2022 ESA Verification</span>
     </footer>
     <!-- END FOOTER -->
     <!-- BEGIN SCRIPTS -->

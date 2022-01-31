@@ -40,7 +40,7 @@
     <!-- END PAGE CONTENT -->
     <!-- BEGIN FOOTER -->
     <footer>
-        <span class="rights-text">© 2021 ESA Verification</span>
+        <span class="rights-text">© 2022 ESA Verification</span>
     </footer>
     <!-- END FOOTER -->
     <!-- BEGIN SCRIPTS -->

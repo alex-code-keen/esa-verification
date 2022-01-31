@@ -8,7 +8,8 @@ if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
   exit;
 }
 
-require( dirname(__FILE__).'/../config/config.php' ); // <- $link
+// require( dirname(__FILE__).'/../config/config.php' ); //  <- dev $link
+require( dirname(__FILE__).'/config/config_sql.php' ); // <- prod $link
 
 #------------------------------------------
 function clearStoredResults($mysqli_link){
@@ -162,7 +163,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         <section class="page-header-section">
           <h1 class="page-heading">ESA Verification</h1>
           <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
-          <h2 class="section-heading-small">First time here, please enter the email used to receive your ESA documents. Don’t know your password please click password reset below.</h2>
+          <h2 class="section-heading-small">First time here, please enter the email used to receive your ESA documents. <br>Don’t know your password - please click password reset below.</h2>
         </section>
         <!-- End Logo Section -->
 
@@ -216,7 +217,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 
       <!-- BEGIN FOOTER -->
       <footer>
-          <span class="rights-text">© 2021 ESA Verification</span>
+          <span class="rights-text">© 2022 ESA Verification</span>
       </footer>
       <!-- END FOOTER -->
 

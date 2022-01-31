@@ -4,22 +4,30 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-//   header("location: logout.php");
-//   exit;	
-// }
-
-// ToDo: check / handle missing userid
-if( !isset( $_SESSION["userid"] )){
-	$userid = "2240";	
-	//   header("location: logout.php");
-	//   exit;	
-} else {
-	$userid = $_SESSION["userid"];
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: logout.php");
+  exit;	
 }
 
+header('Expires: Tue, 01 Jan 2000 00:00:00 GMT');
+header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache'); 
+
+// ToDo: check / handle missing userid
+// -- checking it later
+// if( !isset( $_SESSION["userid"] )){
+// 	$userid = "2240";	
+// 	//   header("location: logout.php");
+// 	//   exit;	
+// } else {
+// 	$user_id = $_SESSION["userid"];
+// }
+
 // make include here
-require( dirname(__FILE__).'/../config/config.php' ); //  <- $link
+// require( dirname(__FILE__).'/../config/config.php' ); //  <- dev $link
+require( dirname(__FILE__).'/config/config_sql.php' ); // <- prod $link
 
 #------------------------------------------
 function clearStoredResults( $mysqli_link ){
@@ -64,7 +72,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 	if( empty( trim( $_SESSION[ "userid" ]))){
 		$err_msg = "Something was wrong. Try again later, please. 6";
 	} else {
-		$userid = $_SESSION[ "userid" ];
+		$user_id = $_SESSION[ "userid" ];
 	}
 
 	// check if uuid is still with us
@@ -86,28 +94,23 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 			$arr_types = "ss";
 			$pass_hash = password_hash( $enter_pass, PASSWORD_DEFAULT ); // Creates a password hash
 
-			$sql = "SELECT fn_set_contact_password_by_uuid( ?, ? ) as 'res';";
+			$sql = "SELECT fn_set_contact_password_by_id( ?, ? ) as 'res';";
 			$stmt = mysqli_prepare( $link, $sql );
-			mysqli_stmt_bind_param( $stmt, $arr_types, $uuid, $pass_hash ); 
+			mysqli_stmt_bind_param( $stmt, $arr_types, $user_id, $pass_hash ); 
 			mysqli_stmt_execute( $stmt );
 	
 			$res = mysqli_stmt_get_result( $stmt );
 			$row = mysqli_fetch_assoc( $res );
 			// print_r($row);		
 	
-			$userid = $row['res'];
+			$result = $row['res'];
 
+			// XXX - contact_id / user_id - "activation_code" match and "is_active"=1 and "password" is null and within 48 hours		
+			// 0 - SQL function abnormal error
+			// 1 - contact_id was not found			
+			if ( $result == 0 ){ $err_msg = "Something was wrong. Try again later, please.";  }
+			if ( $result == 1 ){ $err_msg = "Something was wrong. Try again later, please.";  }
 			
-			// XXX - contact_id - "activation_code" match and "is_active"=1 and "password" is null and within 48 hours		
-			// 1 - "activation_code" match but password was already set
-			// 2 - "activation_code" match but not within 48 hours expired
-			// 3 - "activation_code" match not expired but a newer was requested
-			// 0 - default - some other case.
-			if ( $userid == 0 ){ $err_msg = "Something was wrong. Try again later, please.";  }
-			if ( $userid == 1 ){ $err_msg = "Congratulations! Your password was already set.";  }
-			if ( $userid == 2 ){ $err_msg = "Sorry, but activation code is only active within 48 hours.";  }
-			if ( $userid == 3 ){ $err_msg = "Sorry, but there was a newer password requested.";  }
-		
 			// Free stored results
 			clearStoredResults( $link );
 			$res->free();
@@ -133,7 +136,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ){
 
 		if ( $err_msg == '' ){
 			$_SESSION[ "loggedin" ] = true;
-			$_SESSION[ "userid" ] 	= $userid;
+			$_SESSION[ "userid" ] 	= $user_id;
 			// 
 			header( "location: esaverification.php" );
 			exit;

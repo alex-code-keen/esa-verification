@@ -3,12 +3,19 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-//   header("location: login.php");
-//   exit;	
-// }
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;	
+}
 
-require( dirname(__FILE__).'/../config/config.php' ); // <- $link
+// require( dirname(__FILE__).'/../config/config.php' ); //  <- dev $link
+require( dirname(__FILE__).'/config/config_sql.php' ); // <- prod $link
+
+header('Expires: Tue, 01 Jan 2000 00:00:00 GMT');
+header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache'); 
 
 #------------------------------------------
 function clearStoredResults($mysqli_link){
@@ -130,7 +137,7 @@ try{
 				</p>
 
 				<?php if ( empty($esa_docs) || (float)$esa_docs == 0) {  ?>
-					<p><b>Your ESA documents .</b></p>
+					<p><b>Your ESA documents have not been approved yet or they are expired.</b></p>
 				<?php } else { ?>
 					<p><a href="https://drive.google.com/open?id=<?php echo $esa_docs; ?>">
 						Click Here to view and print your ESA Documents
@@ -161,14 +168,13 @@ try{
 
 				<p>To submit your landlord request form click the link below:</p>				
 				<a href="landlordrequest.php">Click here to request a custom landlord form</a>
-
-				<p><br/><b class="underline">Get The Most From Your ESA!</b>
-					<br><br/>
+				<br>
+				<p><br><b class="underline">Get The Most From Your ESA!</b>
+					<br>
 					<a href="https://secure.supportpets.com/Official-ESA-Vest">Click Here</a> to 
-					Order The <b>Official ESA ™ Vest</b>
-					<br><br/>
+					Order The <b>Official ESA ™ Vest</b><br>				
 					<a href="https://secure.supportpets.com/clearance-sale-esa-id-cards-with-free-certificate-renewal">Click Here</a> to 
-					Order The <b>Official ESA ™ ID Card (Free Certificate Included)</b><br/><br/>
+					Order The <b>Official ESA ™ ID Card (Free Certificate Included)</b>
 				</p>
 
 				<p>Refer friends and family that are in need of our services. We'll take great care of them, 
@@ -187,8 +193,8 @@ try{
 					up we'll contact you to renew your ESA at a discounted rate as a valued customer.
 				</p>
 
-				<p class="m-end-0">Have any questions? email our support team for<br> 
-					assistance: <a href="mailto:support@Supportpets.com" target="">support@Supportpets.com</a>				
+				<p class="m-end-0">Have any questions? Email our support team for
+					assistance: <a href="mailto:info@supportpets.com" target="">info@supportpets.com</a>				
 				</p>
 
 			</div>
@@ -199,7 +205,7 @@ try{
 	<footer class="dashboard-footer">
 		<p class="m-b-15">In Accordance with Federal Laws</p>
 		<img class="footer-logo m-b-15" src="./img/dashboard-footer-logo.JPG" alt="logo">
-		<p class="m-b-15">&copy; 2021 ESA Verification</p>
+		<p class="m-b-15">&copy; 2022 ESA Verification</p>
 		<ul class="list-inline footer-list">
 			<li><a href="#">Terms</a></li>
 			<li><a href="#">Privacy</a></li>

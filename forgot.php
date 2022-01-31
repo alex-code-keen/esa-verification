@@ -1,12 +1,18 @@
 <?php
 // Initialize the session
-// session_start();
+session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-// if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
-//     header( "location: dashboard.php" );
-//     exit;
-// }
+if( isset( $_SESSION["loggedin"] ) && $_SESSION["loggedin"] === true ){
+    header( "location: dashboard.php" );
+    exit;
+}
+
+header('Expires: Tue, 01 Jan 2000 00:00:00 GMT');
+header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache'); 
  
 // Define variables and initialize with empty values
 $username = "";  //$password = "";
@@ -37,8 +43,11 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
   // }
 
   // Now we can include config file - $link or $sql originates there
-  require( dirname(__FILE__).'/../config/config.php' );
-  require( dirname(__FILE__).'/../config/config_klaviyo.php' );
+  // require( dirname(__FILE__).'/../config/config.php' ); // <- $link
+  // require( dirname(__FILE__).'/../config/config_klaviyo.php' );
+  // require( dirname(__FILE__).'/../config/config.php' ); //  <- dev $link
+  require( dirname(__FILE__).'/config/config_sql.php' ); // <- prod $link
+  require( dirname(__FILE__).'/config/config_klaviyo.php' );
   
   // Validate credentials
   if( empty( $username_err )){ //  && empty( $password_err )){
@@ -162,7 +171,8 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
           <section class="page-header-section">
               <h1 class="page-heading">ESA Verification</h1>
               <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
-              <h2 class="section-heading-small">Please enter the email used to receive your ESA documents to reset your password. The email must match</h2>
+              <h2 class="section-heading-small">Please enter the email used to receive your ESA 
+                documents to reset your password. The email must match.</h2>
           </section>
           <!-- End Logo Section -->
           <!-- Begin Form Section -->
@@ -195,7 +205,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
       <!-- END PAGE CONTENT -->
       <!-- BEGIN FOOTER -->
       <footer>
-          <span class="rights-text">© 2021 ESA Verification</span>
+          <span class="rights-text">© 2022 ESA Verification</span>
       </footer>
       <!-- END FOOTER -->
       <!-- BEGIN SCRIPTS -->

@@ -24,9 +24,10 @@
         <section class="page-header-section">
             <h1 class="page-heading">ESA Verification</h1>
             <img id="esa-logo" class="logo" src="./img/ESA_logo.PNG" alt="ESA logo" />
+						<h2 class="section-heading-small">Create a Password to Access your ESA Documents</h2>
         </section>
         <!-- End Logo Section -->
-		<!-- Begin Password Criteria -->
+		<!-- Begin Password Criteria -->		
 		<section class="content-center">
 			<div class="snippet">
 				<label class="snippet-heading">PASSWORD MUST BE</label>
@@ -50,7 +51,7 @@
 					class="needs-validation" 
 					novalidate>
 					<div class="form-group form-input-group">
-						<label>New Password</label>
+						<label>Enter New Password</label>
 						<div class="input-group">
 							<input 
 								type="password" 
@@ -65,7 +66,7 @@
 						</div>
 					</div>
 					<div class="form-group  form-input-group">
-						<label>Re-enter Password</label>
+						<label>Re-enter New Password</label>
 						<div class="input-group">
 							<input 
 								type="password"
@@ -89,7 +90,7 @@
     <!-- END PAGE CONTENT -->
     <!-- BEGIN FOOTER -->
     <footer>
-        <span class="rights-text">© 2021 ESA Verification</span>
+        <span class="rights-text">© 2022 ESA Verification</span>
     </footer>
     <!-- END FOOTER -->
     <!-- BEGIN SCRIPTS -->
