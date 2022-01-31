@@ -15,6 +15,7 @@ togglePassword0.addEventListener('click', function (e) {
   password0.setAttribute('type', type);
   // toggle the eye / eye slash icon
   myEye0.classList.toggle('bi-eye');
+  return true;
 });
 
 togglePassword1.addEventListener('click', function (e) {
@@ -23,8 +24,8 @@ togglePassword1.addEventListener('click', function (e) {
   password1.setAttribute('type', type);
   // toggle the eye / eye slash icon  
   myEye1.classList.toggle('bi-eye');
+  return true;
 });
-
 
 password0.addEventListener('keydown', function(e){
   // e.preventDefault();
@@ -36,7 +37,7 @@ password0.addEventListener('keydown', function(e){
   var keyValid = validateKey( key );
   // console.log( key+'->'+res );  
   if ( !keyValid ){ e.preventDefault() };
-
+  return true;
   // var passValid = validatePass( value + key );
   // if ( passValid ){
   //   document.getElementById("verify").disabled = false;
@@ -55,7 +56,7 @@ password1.addEventListener('keydown', function(e){
   var keyValid = validateKey( key );
   // console.log( key+'->'+res );  
   if ( !keyValid ){ e.preventDefault() };
-
+  return true;
   // var passValid = validatePass( value + key );
   // if ( passValid ){
   //   document.getElementById("verify").disabled = false;
@@ -97,6 +98,7 @@ password0.addEventListener("keyup", function(e){
     password0.style.borderColor = "red";
     btnSubmit.disabled = true;
   }
+  return true;
 });
 
 password1.addEventListener("keyup", function(){  
@@ -114,6 +116,7 @@ password1.addEventListener("keyup", function(){
     password1.style.borderColor = "red";
     btnSubmit.disabled = true;
   }
+  return true;
 });
 
 // function testpassword() {
