@@ -33,6 +33,12 @@
 				<div class="snippet-body">
 					<?php echo $err_msg; ?>
 				</div>
+                <div class="snippet-body">
+                    <a class="link-primary" href="login.php">Login</a>
+                </div>
+                <div class="snippet-body">
+                    <a class="link-primary" href="forgot.php">Forgot password?</a>
+                </div>
 			</div>
 		</section>
 		<!-- End Error Message -->
