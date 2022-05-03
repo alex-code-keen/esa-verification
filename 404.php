@@ -1,9 +1,14 @@
+
 <?php
 // Initialize the session
 session_start();
-
 if ( isset( $_COOKIE["old_site_first_visit"] )){
-    header ( "location: login.php" );
+?>
+<script type="text/javascript">
+window.location.href = '/login.php';
+</script>
+<?php
+    exit;
 }
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
@@ -128,12 +133,9 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 
         $response = curl_exec($curl);
 
-        // set cookie so old site redirect redirects to login page
-        
-        setcookie( "old_site_first_visit", true, time()+60*60*24*30, "/", "esaverification.org", 1);
-
         // Clean exit
         // $username_err = $response;
+        setcookie( "old_site_first_visit", true, time()+60*60*24*30, "/", ".esaverification.org", 1);
         $newURL = 'forgot-ty.php';
         header('Location: '.$newURL);
         exit();
@@ -226,6 +228,16 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
   </body>
 
 </html>
+<?php
+
+print_r($_COOKIE);
+?>
+
+
+
+
+
+
 
 
 
